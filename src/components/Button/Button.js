@@ -1,21 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Button = props => {
-  console.log("Button Props ==== ", props);
+const Button =({text, styleClass, name, type, otherprops, onClick})=> {
+  console.log("Button Props ==== ", text, styleClass, name, type, otherprops);
   
   return (
     <>
-      <Button name={props.name} type={props.type} class={props.class}  onClick={props.onClick} {...otherprops}>{props.text}</Button>
+      <Button >{text}</Button>
+      {/* <Button name={name} type={type} className={`btn btn-${styleClass}`}  onClick={onClick}>{text}</Button> */}
     </>
   )
 }
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  style: PropTypes.string,
   onClick: PropTypes.func.isRequired,
-  class: PropTypes.string,
 }
 
 export default Button;
