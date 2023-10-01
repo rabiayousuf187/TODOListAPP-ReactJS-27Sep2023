@@ -18,8 +18,9 @@ const CardComp = (props) => {
             width="100%"
           />
           <CardImgOverlay>
-            <CardTitle tag="h2">Manage Your Future Plain</CardTitle>
-            <CardText><small>Todo List</small></CardText>
+            <CardTitle tag="h2" style={{textAlign: 'center',}}>Manage Your Future Plain
+            <h6>Todo List</h6></CardTitle>
+           
             {props.children}
           </CardImgOverlay>
         </Card>
