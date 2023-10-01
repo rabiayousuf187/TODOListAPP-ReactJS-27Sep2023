@@ -5,18 +5,18 @@ import ButtonComp from "../Button/Button";
 const TodoForm = () => {
   return (
     <>
-      <Form>
+      <Form id="todoForm">
         <Row className="row-cols-lg-auto g-3 align-items-center">
           <Col>
             <Input
-              id="exampleEmail"
-              name="email"
-              placeholder="something@idk.cool"
-              ty9pe="email"
+              id="todo"
+              name="todo"
+              placeholder="What is the task todo?"
+              type="text"
             />
-          </Col>            
+          </Col>
           <Col>
-            <ButtonComp></ButtonComp>
+            <ButtonComp text="Add" name='add' type='submit'></ButtonComp>
           </Col>
         </Row>
       </Form>
