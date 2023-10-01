@@ -14,8 +14,13 @@ library.add(faTrash, faPenToSquare);
           toggleCompleted(task.id)
         }} className={`${task.completed ? 'completed' : ""}`}>{task.task}</p>
         <div>
-                  <FontAwesomeIcon icon={faTrash} />
-                  <FontAwesomeIcon icon={faPenToSquare} />
+                  <FontAwesomeIcon icon={faTrash} 
+                  onClick={()=>{
+                    editTodoForm
+                  }}/>
+                  <FontAwesomeIcon icon={faPenToSquare} onClick={()=>{
+                       deleteTodo(task.id)
+                  }} />
                 </div>
       </div>
     );
