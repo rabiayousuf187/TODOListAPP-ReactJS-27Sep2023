@@ -18,7 +18,7 @@ const TodoList = ({ task, toggleCompleted, editTodo, deleteTodo }) => {
               toggleCompleted(task.id);
             }}
             className={`${task.completed ? "completed" : ""}`}
-          >
+          style={{marginBottom: '0px',}}>
             {task.task}
           </p>
         </Col>
