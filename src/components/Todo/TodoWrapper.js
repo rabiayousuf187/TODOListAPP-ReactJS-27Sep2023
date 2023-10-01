@@ -4,9 +4,9 @@ import TodoForm from "./TodoForm";
 const TodoWrapper = () => {
   return (
     <>
-      <TodoForm>
-        
-      </TodoForm>
+      <div className="todowrapper">
+        <TodoForm></TodoForm>
+      </div>
     </>
   );
 };
