@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
-import TodoForm from "../Todo/TodoForm";
 
 const CardComp = (props) => {
   console.log('Carrd ==== ', props);
