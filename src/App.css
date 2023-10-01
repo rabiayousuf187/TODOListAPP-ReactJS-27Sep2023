@@ -97,3 +97,10 @@ button#add {
   margin: 0px 10px;
   font-size: 18px;
 }
+svg.svg-inline--fa.fa-trash.icon {
+  color: #ff3737;
+}
+
+svg.svg-inline--fa.fa-pen-to-square.icon {
+  color: #ffbc00;
+}
