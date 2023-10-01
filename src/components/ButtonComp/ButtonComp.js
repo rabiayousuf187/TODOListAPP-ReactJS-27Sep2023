@@ -22,7 +22,7 @@ ButtonComp.propTypes = {
   type: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   style: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  // onClick: PropTypes.func.isRequired,
 };
 
 export default ButtonComp;
