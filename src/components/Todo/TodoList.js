@@ -27,13 +27,16 @@ const TodoList = ({ task, toggleCompleted, editTodo, deleteTodo }) => {
             <FontAwesomeIcon
               icon={faTrash}
               onClick={() => {
-                editTodo(task.id);
+                deleteTodo(task.id);
               }}
+              
+              className="icon"
             />
             <FontAwesomeIcon
               icon={faPenToSquare}
-              onClick={() => {
-                deleteTodo(task.id);
+               className="icon"
+               onClick={() => {
+                editTodo(task.id);
               }}
             />
           </div>
