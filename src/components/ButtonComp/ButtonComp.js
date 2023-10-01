@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button } from "reactstrap";
 
-const ButtonComp = ({ text, color, className, name, type, onClick }) => {
+const ButtonComp = ({ id, text, color, className, name, type, onClick, otherprops }) => {
 
-  console.log("Button Props ==== ", text, color, className, name, type, onClick);
+  console.log("Button Props ==== ",id,  text, color, className, name, type, onClick);
   color === undefined ? color ='primary' : color = color;
   return (
     <>
-      <Button color={color} size="" onClick={onClick}>{text}</Button>
+      <Button id={id} color={color} type={type} size="" onClick={onClick} {...otherprops}>{text}</Button>
       
       {/* <Button onClick={onClick}>{props.text}</Button> */}
       {/* <Button onClick={onClick}>{text}</Button> */}
