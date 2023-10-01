@@ -14,7 +14,7 @@ const EditTodoForm = ({editTodo, task}) => {
   return (
     <>
       <Form id="todoForm" onSubmit={handleSubmit}>
-        <Row className="row-cols-lg-auto g-3 justify-content-center align-items-center">
+        <Row className="row-cols-lg-auto g-3 justify-content-center align-items-center" style={{margin: '1px 0px 14px',}}>
           <Col lg={10}>
             <Input
               id="todo"
@@ -27,7 +27,8 @@ const EditTodoForm = ({editTodo, task}) => {
             />
           </Col>
           <Col lg={2}>
-            <ButtonComp text="Update" name='add' type='submit' id="update"></ButtonComp>
+            <ButtonComp  
+              color="warning" text="Update" name='add' type='submit' id="update"></ButtonComp>
           </Col>
         </Row>
       </Form>
