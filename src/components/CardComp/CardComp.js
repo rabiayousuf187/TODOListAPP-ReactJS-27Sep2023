@@ -18,7 +18,8 @@ const CardComp = (props) => {
             width="100%"
           />
           <CardImgOverlay>
-            <CardTitle tag="h2">What are the Future Plain??</CardTitle>
+            <CardTitle tag="h2">Manage Your Future Plain</CardTitle>
+            <CardText><small>Todo List</small></CardText>
             {props.children}
           </CardImgOverlay>
         </Card>
