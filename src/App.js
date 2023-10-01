@@ -6,15 +6,15 @@ import Heading from "./components/Heading/Heading";
 import TodoWrapper from "./components/Todo/TodoWrapper";
 
 function App() {
-  const eventHandler = (eventName) => {
-    alert("Click BUtton === " + eventName);
-  };
+  // const eventHandler = (eventName) => {
+  //   alert("Click BUtton === " + eventName);
+  // };
   return (
     <div className="App">
       <Container>
         <TodoWrapper />
       </Container>
-      <Heading text="" />
+      {/* <Heading text="" />
       <Heading text="dgfh" />
       <Button
         type="button"
@@ -23,7 +23,7 @@ function App() {
         onClick={() => {
           eventHandler("Add");
         }}
-      />
+      /> */}
     </div>
   );
 }

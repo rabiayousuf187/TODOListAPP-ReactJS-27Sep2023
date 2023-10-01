@@ -62,3 +62,9 @@ form#todoForm {
 button#add {
   width: 80%;
 }
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

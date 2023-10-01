@@ -3,6 +3,7 @@ import TodoForm from "./TodoForm";
 import CardComp from "../CardComp/CardComp";
 import TodoList from "./TodoList";
 import { v4 as uuidv4 } from "uuid";
+import EditTodoForm from "./EditTodoForm";
 
 // for Universal Unique Identifier-128
 uuidv4();
@@ -34,8 +35,14 @@ const TodoWrapper = () => {
     }))
   }
   const editTodo = (id)=>{
-    setTodos(todos.filter((todo)=>{
-        return todo.id !== id
+    setTodos(todos.map((todo)=>{
+        return todo.id === id ? {...todo, isEditing: !todo.isEditing } : todo
+
+    }))
+  }
+  const editTask = (task , id)=>{
+    setTodos(todos.map((todo)=>{
+        return todo.id === id ? {...todo, task, isEditing: !todo.isEditing } : todo
 
     }))
   }
@@ -47,15 +54,16 @@ const TodoWrapper = () => {
         </CardComp>
 
         {todos.map((todo, ind) => {
-          return (
-            <TodoList
-              task={todo}
+            return todo.isEditing ? (<EditTodoForm editTodo={editTask} task={todo}/>) :
+          
+            (<TodoList
+            task={todo}
               key={ind}
               toggleComplete={toggleComplete}
                 deleteTodo = {deleteTodo}
                 editTodo = {editTodo}
-            ></TodoList>
-          );
+            ></TodoList>)
+          
         })}
       </div>
     </>

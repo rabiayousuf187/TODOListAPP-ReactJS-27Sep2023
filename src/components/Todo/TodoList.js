@@ -1,4 +1,5 @@
 import React from "react";
+import { Row } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons"; // Import the icons you want to use
 
@@ -6,33 +7,45 @@ import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons"; // I
 import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(faTrash, faPenToSquare);
 
- const TodoList = ({task}) => {
-    console.log("list ====", task);
-    return (
+const TodoList = ({ task, toggleCompleted, editTodo, deleteTodo }) => {
+  console.log("list ====", task);
+  return (
+    <Row>
       <div className="todo">
-        <p onClick={()=>{
-          toggleCompleted(task.id)
-        }} className={`${task.completed ? 'completed' : ""}`}>{task.task}</p>
+        <Col>
+          <p
+            onClick={() => {
+              toggleCompleted(task.id);
+            }}
+            className={`${task.completed ? "completed" : ""}`}
+          >
+            {task.task}
+          </p>
+        </Col>
+
         <div>
-                  <FontAwesomeIcon icon={faTrash} 
-                  onClick={()=>{
-                    editTodoForm
-                  }}/>
-                  <FontAwesomeIcon icon={faPenToSquare} onClick={()=>{
-                       deleteTodo(task.id)
-                  }} />
-                </div>
+          <FontAwesomeIcon
+            icon={faTrash}
+            onClick={() => {
+              editTodo(task.id);
+            }}
+          />
+          <FontAwesomeIcon
+            icon={faPenToSquare}
+            onClick={() => {
+              deleteTodo(task.id);
+            }}
+          />
+        </div>
       </div>
-    );
-  };
-  
-  export default TodoList;
-  
-  
+    </Row>
+  );
+};
+
+export default TodoList;
 
 // import React from "react";
 // import TableComp from "../TableComp/TableComp";
-
 
 // const TodoList = ({task}) => {
 //   console.log("list ====", task);
@@ -44,4 +57,3 @@ library.add(faTrash, faPenToSquare);
 // };
 
 // export default TodoList;
-

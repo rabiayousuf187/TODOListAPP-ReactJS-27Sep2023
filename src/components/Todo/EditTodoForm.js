@@ -3,7 +3,7 @@ import { Form, Row, Col, Input } from "reactstrap";
 import ButtonComp from "../ButtonComp/ButtonComp";
 
 const EditTodoForm = ({editTodos, task}) => {
-    const [value, setValue] = useState([]);
+    const [value, setValue] = useState(task.task);
     let handleSubmit = (event) =>{
         event.preventDefault();
 
