@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import { Container } from "reactstrap";
 import "./App.css";
-import Button from "./components/Button/Button";
+import Button from "./components/ButtonComp/ButtonComp";
 import Heading from "./components/Heading/Heading";
 import TodoWrapper from "./components/Todo/TodoWrapper";
 
