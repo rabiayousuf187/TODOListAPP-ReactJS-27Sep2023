@@ -1,9 +1,9 @@
 import React, { Children } from "react";
-import {Card, CardImg, CardImgOverlay, CardTitle, CardText} from 'reactstrap'
+import { Card, CardImg, CardImgOverlay, CardTitle, CardText } from "reactstrap";
 import TodoForm from "../Todo/TodoForm";
 
-
 const CardComp = (props) => {
+  console.log('Carrd ==== ', props);
   return (
     <>
       <div>
@@ -19,7 +19,7 @@ const CardComp = (props) => {
           />
           <CardImgOverlay>
             <CardTitle tag="h2">What are the Future Plain??</CardTitle>
-            <TodoForm></TodoForm>
+            {props.children}
           </CardImgOverlay>
         </Card>
       </div>
