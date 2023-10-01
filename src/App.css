@@ -37,4 +37,28 @@
   }
 } */
 
-/*  */
+/* Card  */
+
+.todowrapper {
+  padding: 35px 10px;
+}
+.card-img-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+form#todoForm {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.row {
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+button#add {
+  width: 80%;
+}
