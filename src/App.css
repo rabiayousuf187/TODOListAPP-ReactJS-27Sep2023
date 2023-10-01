@@ -41,30 +41,44 @@
 
 .todowrapper {
   padding: 35px 10px;
+  width: 60%;
+  margin: auto;
 }
+
 .card-img-overlay {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
+
 form#todoForm {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
+
 .row {
   justify-content: center;
   margin: 0;
   padding: 0;
+
 }
+
 button#add {
   width: 80%;
 }
+
 .todo {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+  width: 80%;
+}
+
+.todo .row {
+  display: flex;
+  justify-content: space-between;
 }
