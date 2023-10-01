@@ -22,12 +22,18 @@ const TodoWrapper = () => {
   const toggleComplete = (id) => {
     setTodos(
       todos.map((todo) => {
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo;
+       return todo.id === id ? { ...todo, completed: !todo.completed } : todo;
       })
     );
   };
 
   const deleteTodo = (id)=>{
+    setTodos(todos.map((todo)=>{
+        return todo.id === id ? {...todo, isEditing: !todo.isEditing} : todo
+
+    }))
+  }
+  const editTodo = (id)=>{
     setTodos(todos.filter((todo)=>{
         return todo.id !== id
 
@@ -47,6 +53,7 @@ const TodoWrapper = () => {
               key={ind}
               toggleComplete={toggleComplete}
                 deleteTodo = {deleteTodo}
+                editTodo = {editTodo}
             ></TodoList>
           );
         })}
