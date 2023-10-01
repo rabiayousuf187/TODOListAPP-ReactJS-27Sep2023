@@ -1,17 +1,29 @@
 // import logo from './logo.svg';
-import './App.css';
-import Button from './components/Button/Button';
-import Heading from './components/Heading/Heading';
+import { Container } from "reactstrap";
+import "./App.css";
+import Button from "./components/Button/Button";
+import Heading from "./components/Heading/Heading";
+import TodoWrapper from "./components/Todo/TodoWrapper";
 
 function App() {
-  const eventHandler = (eventName) =>{
-    alert("Click BUtton === "+eventName)
-  }
+  const eventHandler = (eventName) => {
+    alert("Click BUtton === " + eventName);
+  };
   return (
     <div className="App">
-      <Heading text=""/>
-      <Heading text="dgfh"/>
-      <Button type="button" text="Add" color="primary" onClick={()=>{eventHandler('Add')}} />
+      <Container>
+        <TodoWrapper />
+      </Container>
+      <Heading text="" />
+      <Heading text="dgfh" />
+      <Button
+        type="button"
+        text="Add"
+        color="primary"
+        onClick={() => {
+          eventHandler("Add");
+        }}
+      />
     </div>
   );
 }
