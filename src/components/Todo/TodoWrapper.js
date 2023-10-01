@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Col, Row } from "reactstrap";
 import TodoForm from "./TodoForm";
 import CardComp from "../CardComp/CardComp";
 import TodoList from "./TodoList";
@@ -23,29 +24,34 @@ const TodoWrapper = () => {
   const toggleComplete = (id) => {
     setTodos(
       todos.map((todo) => {
-       return todo.id === id ? { ...todo, completed: !todo.completed } : todo;
+        return todo.id === id ? { ...todo, completed: !todo.completed } : todo;
       })
     );
   };
 
-  const deleteTodo = (id)=>{
-    setTodos(todos.map((todo)=>{
-        return todo.id === id ? {...todo, isEditing: !todo.isEditing} : todo
-
-    }))
-  }
-  const editTodo = (id)=>{
-    setTodos(todos.map((todo)=>{
-        return todo.id === id ? {...todo, isEditing: !todo.isEditing } : todo
-
-    }))
-  }
-  const editTask = (task , id)=>{
-    setTodos(todos.map((todo)=>{
-        return todo.id === id ? {...todo, task, isEditing: !todo.isEditing } : todo
-
-    }))
-  }
+  const deleteTodo = (id) => {
+    setTodos(
+      todos.filter((todo) => {
+        return todo.id != id;
+      })
+    );
+  };
+  const editTodo = (id) => {
+    setTodos(
+      todos.map((todo) => {
+        return todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo;
+      })
+    );
+  };
+  const editTask = (task, id) => {
+    setTodos(
+      todos.map((todo) => {
+        return todo.id === id
+          ? { ...todo, task, isEditing: !todo.isEditing }
+          : todo;
+      })
+    );
+  };
   return (
     <>
       <div className="todowrapper">
@@ -53,17 +59,28 @@ const TodoWrapper = () => {
           <TodoForm addTodos={addTodos}></TodoForm>
         </CardComp>
 
+        <Row className="title">
+          <Col md="auto">
+            <p style={{ marginBottom: "0px" }}>Task List</p>
+          </Col>
+          <Col md="auto">
+            <div>
+              <p style={{ marginBottom: "0px" }}>Status</p>
+            </div>
+          </Col>
+        </Row>
         {todos.map((todo, ind) => {
-            return todo.isEditing ? (<EditTodoForm editTodo={editTask} task={todo}/>) :
-          
-            (<TodoList
-            task={todo}
+          return todo.isEditing ? (
+            <EditTodoForm editTodo={editTask} task={todo} />
+          ) : (
+            <TodoList
+              task={todo}
               key={ind}
               toggleComplete={toggleComplete}
-                deleteTodo = {deleteTodo}
-                editTodo = {editTodo}
-            ></TodoList>)
-          
+              deleteTodo={deleteTodo}
+              editTodo={editTodo}
+            ></TodoList>
+          );
         })}
       </div>
     </>
