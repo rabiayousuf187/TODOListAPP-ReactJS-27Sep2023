@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Row, Col, Input } from "reactstrap";
 import ButtonComp from "../Button/Button";
 
 const TodoForm = () => {
+    const [value, setValue] = useState([]);
+    let handleSubmit = (event) =>{
+        event.preventDefault();
+
+        console.log(event.target.value);
+    }
   return (
     <>
-      <Form id="todoForm">
+      <Form id="todoForm" onSubmit={handleSubmit}>
         <Row className="row-cols-lg-auto g-3 align-items-center">
           <Col>
             <Input
@@ -13,6 +19,7 @@ const TodoForm = () => {
               name="todo"
               placeholder="What is the task todo?"
               type="text"
+              onChange={(e)=>{ setValue(e.target.value) }}
             />
           </Col>
           <Col>
