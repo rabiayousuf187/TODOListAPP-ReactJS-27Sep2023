@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Form, Row, Col, Input } from "reactstrap";
 import ButtonComp from "../ButtonComp/ButtonComp";
 
-const EditTodoForm = ({editTodos, task}) => {
+const EditTodoForm = ({editTodo, task}) => {
     const [value, setValue] = useState(task.task);
     let handleSubmit = (event) =>{
         event.preventDefault();
 
-        editTodos(value, task.id);
+        editTodo(value, task.id);
         setValue("")
         console.log(event.target.value);
     }
