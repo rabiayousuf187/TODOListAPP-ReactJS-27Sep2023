@@ -26,6 +26,13 @@ const TodoWrapper = () => {
       })
     );
   };
+
+  const deleteTodo = (id)=>{
+    setTodos(todos.filter((todo)=>{
+        return todo.id !== id
+
+    }))
+  }
   return (
     <>
       <div className="todowrapper">
@@ -39,6 +46,7 @@ const TodoWrapper = () => {
               task={todo}
               key={ind}
               toggleComplete={toggleComplete}
+                deleteTodo = {deleteTodo}
             ></TodoList>
           );
         })}
