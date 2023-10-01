@@ -5,13 +5,13 @@ import Heading from './components/Heading/Heading';
 
 function App() {
   const eventHandler = (eventName) =>{
-    alert("CLick BUtton === ", eventName)
+    alert("Click BUtton === "+eventName)
   }
   return (
     <div className="App">
-      <Heading text="Welcome"/>
+      <Heading text=""/>
       <Heading text="dgfh"/>
-      <Button text="Add" />
+      <Button type="button" text="Add" color="primary" onClick={()=>{eventHandler('Add')}} />
     </div>
   );
 }
