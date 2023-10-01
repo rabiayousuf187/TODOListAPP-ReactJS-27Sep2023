@@ -1,5 +1,5 @@
 import React from "react";
-import { Row } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons"; // Import the icons you want to use
 
@@ -10,9 +10,9 @@ library.add(faTrash, faPenToSquare);
 const TodoList = ({ task, toggleCompleted, editTodo, deleteTodo }) => {
   console.log("list ====", task);
   return (
-    <Row>
-      <div className="todo">
-        <Col>
+    <div className="todo">
+      <Row>
+        <Col md='auto'>
           <p
             onClick={() => {
               toggleCompleted(task.id);
@@ -22,23 +22,24 @@ const TodoList = ({ task, toggleCompleted, editTodo, deleteTodo }) => {
             {task.task}
           </p>
         </Col>
-
-        <div>
-          <FontAwesomeIcon
-            icon={faTrash}
-            onClick={() => {
-              editTodo(task.id);
-            }}
-          />
-          <FontAwesomeIcon
-            icon={faPenToSquare}
-            onClick={() => {
-              deleteTodo(task.id);
-            }}
-          />
-        </div>
-      </div>
-    </Row>
+        <Col md='auto'>
+          <div>
+            <FontAwesomeIcon
+              icon={faTrash}
+              onClick={() => {
+                editTodo(task.id);
+              }}
+            />
+            <FontAwesomeIcon
+              icon={faPenToSquare}
+              onClick={() => {
+                deleteTodo(task.id);
+              }}
+            />
+          </div>
+        </Col>
+      </Row>
+    </div>
   );
 };
 
