@@ -78,7 +78,7 @@ button#add {
   width: 100%;
 }
 
-.todo .row {
+.todo .row, .title{
   display: flex;
   justify-content: space-between;
   border: 3px solid navy;
@@ -87,4 +87,13 @@ button#add {
   background: #131c37;
   color: whitesmoke;
   font-size: 15px;
+}
+.title {
+  justify-content: space-around;
+  border: 1px dotted whitesmoke;
+  background: #141985;
+}
+.icon {
+  margin: 0px 10px;
+  font-size: 18px;
 }
